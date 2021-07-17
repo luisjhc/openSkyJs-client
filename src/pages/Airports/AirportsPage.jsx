@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import * as CONSTS from "../../utils/consts";
 import AirportsResponse from "./AirportsResponse";
+import "./AirportsPage.css";
 
 export default function Airports() {
   // HOOKS FOR THE FORM AND THE API RESPONSE 👇
@@ -43,11 +44,11 @@ export default function Airports() {
   }
   // console.log(listOfArrivals);
   return (
-    <div>
+    <div className="container">
       <div>
         <h1>Choose an airport and dates</h1>
         <p>Date interval must be no longer than 7 days!</p>
-        <form onSubmit={handleFormSubmission} className="create-student-form">
+        <form onSubmit={handleFormSubmission} className="airportForm">
           {/* CHOOSING THE AIRPORT 👇 */}
           <label htmlFor="airport">Airports</label>
           <select id="airport" name="airport" onChange={handleInputChange}>
@@ -74,6 +75,7 @@ export default function Airports() {
             onChange={handleInputChange}
           />
 
+          <br />
           <button className="airport-submit-btn" type="submit">
             Submit
           </button>

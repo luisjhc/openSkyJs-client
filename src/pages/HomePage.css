@@ -1,0 +1,32 @@
+.homePage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homePage img {
+  width: 900px;
+  margin-top: 30px;
+}
+
+.welcome {
+  position: absolute;
+  margin-top: 100px;
+  color: white;
+  font-size: 2em;
+}
+
+.openSky {
+  position: absolute;
+  margin-top: 200px;
+  font-size: 3em;
+  color: white;
+}
+
+.text {
+  position: absolute;
+  margin-top: 300px;
+  font-size: 1.2em;
+  color: white;
+}
