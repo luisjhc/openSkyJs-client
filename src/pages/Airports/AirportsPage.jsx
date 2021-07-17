@@ -3,9 +3,11 @@ import axios from "axios";
 import * as CONSTS from "../../utils/consts";
 import AirportsResponse from "./AirportsResponse";
 import "./AirportsPage.css";
+import LoadingComponent from "../../components/Loading";
 
 export default function Airports() {
   // HOOKS FOR THE FORM AND THE API RESPONSE 👇
+  const [isLoading, setIsLoading] = React.useState(false);
   const [listOfArrivals, setListOfArrivals] = React.useState([]);
   const [form, setForm] = React.useState({
     airport: "LEMD",
@@ -35,6 +37,7 @@ export default function Airports() {
     axios
       .post(`${CONSTS.SERVER_URL}/airports`, choosenAirport)
       .then((response) => {
+        setIsLoading(false);
         // console.log("response:", response.data);
         return setListOfArrivals(response.data);
       })
@@ -43,6 +46,12 @@ export default function Airports() {
       });
   }
   // console.log(listOfArrivals);
+
+  // FUNCTION TO DISPLAY THE LOADING COMPONENT WHEN THE BUTTON IS PRESSED 👇
+  function handleButton() {
+    setIsLoading(true);
+  }
+
   return (
     <div className="container">
       <div>
@@ -76,14 +85,25 @@ export default function Airports() {
           />
 
           <br />
-          <button className="airport-submit-btn" type="submit">
+          <button
+            className="airport-submit-btn"
+            type="submit"
+            onClick={handleButton}
+          >
             Submit
           </button>
         </form>
       </div>
 
       {/* DISPLAYING THE RESPONSE 👇 */}
-      <AirportsResponse listOfArrivals={listOfArrivals} />
+      {isLoading ? (
+        <div>
+          <h1>Requesting data</h1>
+          <LoadingComponent />
+        </div>
+      ) : (
+        <AirportsResponse listOfArrivals={listOfArrivals} />
+      )}
     </div>
   );
 }
