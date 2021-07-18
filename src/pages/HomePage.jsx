@@ -1,6 +1,6 @@
 import "./HomePage.css";
 import { motion } from "framer-motion";
-import plane from "../Images/plane.jpg";
+import plane from "../images/plane.jpg";
 
 function HomePage() {
   return (
