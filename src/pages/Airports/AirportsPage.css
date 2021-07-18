@@ -10,5 +10,22 @@
 }
 
 .airportForm button {
-  margin: 10px 0;
+  margin: 20px 0;
+}
+
+.airport-submit-btn {
+  background: #61dafb;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 900;
+  box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+  transition: 0.5s;
+  margin: 1.5rem auto;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+}
+
+.airport-submit-btn:hover {
+  box-shadow: none;
 }

@@ -74,6 +74,7 @@ export default function Airports() {
             id="start-date"
             name="startDate"
             onChange={handleInputChange}
+            required
           />
 
           <label htmlFor="end-date">End date</label>
@@ -82,6 +83,7 @@ export default function Airports() {
             id="end-date"
             name="endDate"
             onChange={handleInputChange}
+            required
           />
 
           <br />
