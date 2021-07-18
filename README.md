@@ -31,7 +31,7 @@
 - Callsign
 - Departure airport distance
 
-![airportsPage-response](/src/images/readMeImages/airportsPage-response)
+![airportsPage-response](/src/images/readMeImages/airportsPage-response.png)
 
 ## **[Link to the website](https://openskyjs.netlify.app/)**
 
